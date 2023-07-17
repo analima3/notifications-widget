@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .border-color {
+    @apply border-zinc-300 dark:border-zinc-800;
+  }
+
+  .text-color-primary {
+    @apply text-zinc-800 dark:text-zinc-50;
+  }
+
+  .text-color-secondary {
+    @apply text-zinc-600 dark:text-zinc-500;
+  }
+
+  .bg-color-primary {
+    @apply bg-zinc-200 dark:bg-zinc-900;
+  }
+
+  .bg-color-secondary {
+    @apply bg-zinc-100 dark:bg-zinc-950;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+em-emoji-picker {
+  width: auto;
+  height: 230px;
+}
