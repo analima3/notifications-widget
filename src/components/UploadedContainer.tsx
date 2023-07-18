@@ -15,7 +15,7 @@ export function UploadedContainer({
   return (
     <div className="flex flex-col gap-2">
       <Card>
-        <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row flex-wrap gap-2 md:items-center justify-between">
           <div className="flex flex-row items-center gap-4">
             <FileText className="text-cyan-600" size={34} />
 
@@ -23,7 +23,7 @@ export function UploadedContainer({
               <p className="font-semibold text-xs text-color-primary">
                 {productName}
               </p>
-              <div className="flex flex-row gap-2 ">
+              <div className="flex flex-col md:flex-row md:gap-2">
                 <span className="text-xxs text-color-primary text-opacity-60 font-semibold">
                   2.85 GB
                 </span>
@@ -34,12 +34,14 @@ export function UploadedContainer({
             </div>
           </div>
 
-          <Button variant="outline">Download</Button>
+          <Button variant="outline" className="flex items-end text-center">
+            Download
+          </Button>
         </div>
       </Card>
 
       <Card>
-        <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row flex-wrap gap-2 md:items-center justify-between">
           <div className="flex flex-row items-center gap-4">
             <FileText className="text-pink-600" size={34} />
 
@@ -47,7 +49,7 @@ export function UploadedContainer({
               <p className="font-semibold text-xs text-color-primary">
                 {productName}
               </p>
-              <div className="flex flex-row gap-2 ">
+              <div className="flex flex-col md:flex-row md:gap-2">
                 <span className="text-xxs text-color-primary text-opacity-60 font-semibold">
                   2.85 GB
                 </span>
@@ -58,7 +60,9 @@ export function UploadedContainer({
             </div>
           </div>
 
-          <Button variant="outline">Download</Button>
+          <Button variant="outline" className="flex items-end text-center">
+            Download
+          </Button>
         </div>
       </Card>
     </div>

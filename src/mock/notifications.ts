@@ -9,7 +9,7 @@ export const NOTIFICATIONS_MOCK: NotificationMockType = {
       createdAt: new Date("2023/07/12"),
       user: {
         name: "Dash",
-        urlPic: "https://source.unsplash.com/random/300×300",
+        urlPic: "https://www.github.com/analima3.png",
         status: "online",
       },
       action: {
@@ -24,7 +24,7 @@ export const NOTIFICATIONS_MOCK: NotificationMockType = {
       createdAt: new Date(),
       user: {
         name: "Anton",
-        urlPic: "https://source.unsplash.com/random/300×300",
+        urlPic: "https://www.github.com/analima3.png",
         status: "offline",
       },
       action: {
@@ -39,7 +39,7 @@ export const NOTIFICATIONS_MOCK: NotificationMockType = {
       createdAt: new Date(),
       user: {
         name: "Anna",
-        urlPic: "https://source.unsplash.com/random/300×300",
+        urlPic: "https://www.github.com/analima3.png",
         status: "disabled",
       },
       action: {

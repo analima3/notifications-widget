@@ -3,6 +3,7 @@ import Image from "next/image";
 import figmaLogo from "@/assets/figma-logo.svg";
 import { Button } from "./ui/Button";
 import { Card } from "./ui/Card";
+import { ThumbsDown, ThumbsUp } from "lucide-react";
 
 interface AskedContainerProps {
   productName: string;
@@ -28,9 +29,15 @@ export function AskedContainer({
         </div>
       </div>
 
-      <div className="space-x-2">
-        <Button variant="outline">decline</Button>
-        <Button>approve</Button>
+      <div className="space-x-2 flex self-end md:self-start">
+        <Button variant="outline">
+          <span className="hidden md:block">decline</span>
+          <ThumbsDown className="block md:hidden" size={18} />
+        </Button>
+        <Button>
+          <span className="hidden md:block">approve</span>
+          <ThumbsUp className="block md:hidden" size={18} />
+        </Button>
       </div>
     </Card>
   );

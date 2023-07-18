@@ -30,7 +30,7 @@ export function ModalHeader({ tabs }: ModalHeaderProps) {
 
             return (
               <button
-                className={`px-6 flex flex-row justify-between items-center gap-4 transition-all delay-200 ease-out text-sm font-semibold ${
+                className={`px-6 flex flex-row justify-between items-center gap-4 transition-all delay-300 ease-out text-sm font-semibold ${
                   tabSelected
                     ? "text-color-primary border-b-2 border-b-zinc-800 dark:border-b-zinc-50"
                     : "text-color-secondary"
@@ -40,7 +40,7 @@ export function ModalHeader({ tabs }: ModalHeaderProps) {
               >
                 <span>{tab.title}</span>
                 <div
-                  className={`w-5 h-5 flex justify-center items-center rounded-md text-xs transition-all delay-200 ease-out text-zinc-50  ${
+                  className={`w-5 h-5 flex justify-center items-center rounded-md text-xs transition-all delay-300 ease-out text-zinc-50  ${
                     tabSelected ? "bg-orange-600" : "bg-zinc-800/90"
                   }`}
                 >

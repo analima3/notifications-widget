@@ -13,7 +13,7 @@ export function ModalContainer({ children, isOpen }: ModalContainerProps) {
   return (
     <>
       <div
-        className={`h-5/4 sm:max-w-lg w-full overflow-hidden absolute sm:right-4 top-24 bottom-0 sm:bottom-4 z-10 bg-color-secondary sm:rounded-md shadow-md shadow-zinc-800 transition-all delay-200 ${customClassName}`}
+        className={`h-5/4 sm:max-w-lg w-full overflow-hidden absolute sm:right-4 top-24 bottom-0 sm:bottom-4 z-10 bg-color-secondary rounded-md shadow-md shadow-zinc-800 transition-all delay-300 ${customClassName}`}
       >
         {children}
       </div>

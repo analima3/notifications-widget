@@ -1,9 +1,10 @@
 "use client";
 
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import Picker from "@emoji-mart/react";
 import { Smile } from "lucide-react";
 import { Card } from "./ui/Card";
+import { useStore } from "@/context/store";
 
 export function MentionedContainer() {
   const [inputValue, setInputValue] = useState<string>("");
@@ -11,7 +12,9 @@ export function MentionedContainer() {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleEmojiClick = (emoji: any, evt: any) => {
+  const { setComments } = useStore();
+
+  const handleEmojiClick = (emoji: any) => {
     if (inputRef.current) {
       const cursorPos = inputRef.current.selectionStart as number;
       const newInputValue =
@@ -27,6 +30,13 @@ export function MentionedContainer() {
     setInputValue(evt.target.value);
   };
 
+  const handleSubmit = (evt: FormEvent) => {
+    evt.preventDefault();
+
+    setComments((prevState) => [...prevState, inputValue]);
+    setInputValue("");
+  };
+
   return (
     <Card>
       <div className="space-x-1">
@@ -38,7 +48,7 @@ export function MentionedContainer() {
           😎
         </span>
       </div>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <div className="flex flex-row items-center gap-2 p-3 bg-zinc-300 dark:bg-zinc-700/50 rounded-md outline-1 outline-zinc-100">
           <div className="relative">
             <button
@@ -49,16 +59,15 @@ export function MentionedContainer() {
               <Smile size={18} />
             </button>
             {openEmojiPicker && (
-              <div className="w-80 h-64 absolute -left-3 bottom-3 z-10 translate-y-0">
+              <div className="w-80 h-64 absolute -left-20 md:-left-3 bottom-3 z-10 translate-y-0">
                 <Picker
-                  set="apple"
                   onEmojiSelect={handleEmojiClick}
                   skinTonePosition="none"
                   previewPosition="none"
                   maxFrequentRows={0}
                   navPosition="none"
-                  emojiSize={18}
-                  perLine={8}
+                  emojiSize={16}
+                  perLine={6}
                   onClickOutside={() => setOpenEmojiPicker(false)}
                 />
               </div>
@@ -69,7 +78,8 @@ export function MentionedContainer() {
             type="text"
             value={inputValue}
             onChange={handleInputChange}
-            className="w-full text-sm bg-transparent rounded-md caret-green-600 outline-none placeholder-zinc-600"
+            maxLength={200}
+            className="w-full text-sm text-color-primary bg-transparent rounded-md caret-green-600 outline-none placeholder-zinc-600"
             placeholder={`Reply @tranmautritam`}
           />
         </div>

@@ -34,5 +34,5 @@ button:hover {
 
 em-emoji-picker {
   width: auto;
-  height: 230px;
+  max-height: 230px;
 }

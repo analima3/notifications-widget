@@ -14,7 +14,7 @@ export function Button({ variant = "solid", children, ...rest }: ButtonProps) {
   return (
     <button
       {...rest}
-      className={`py-1 px-5  border-2 text-color-primary capitalize font-semibold rounded-md ${variantColor} ${rest.className}`}
+      className={`p-2 md:py-1 md:px-5 flex items-center justify-center border-2 text-color-primary capitalize font-semibold rounded-md ${variantColor} ${rest.className}`}
     >
       {children}
     </button>
