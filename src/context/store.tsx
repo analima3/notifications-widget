@@ -14,8 +14,6 @@ interface ContextType {
   currentTab: TabType;
   setCurrentTab: Dispatch<SetStateAction<TabType>>;
   notifications: NotificationMockType;
-  comments: string[];
-  setComments: Dispatch<SetStateAction<string[]>>;
 }
 
 const initialState: ContextType = {
@@ -26,8 +24,6 @@ const initialState: ContextType = {
   },
   setCurrentTab: () => {},
   notifications: NOTIFICATIONS_MOCK,
-  comments: [],
-  setComments: () => {},
 };
 
 const Context = createContext<ContextType>(initialState);
@@ -37,7 +33,6 @@ export function ContextProvider({ children }: { children: ReactNode }) {
   const [currentTab, setCurrentTab] = useState<TabType>(
     initialState.currentTab
   );
-  const [comments, setComments] = useState<string[]>([]);
 
   return (
     <Context.Provider
@@ -45,8 +40,6 @@ export function ContextProvider({ children }: { children: ReactNode }) {
         notifications: notifications,
         currentTab: currentTab,
         setCurrentTab: setCurrentTab,
-        comments: comments,
-        setComments: setComments,
       }}
     >
       {children}

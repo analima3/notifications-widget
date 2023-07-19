@@ -9,9 +9,7 @@ export function TeamNotifications() {
           <Notification.Container
             key={index}
             className={
-              notification.read
-                ? "border-l-[6px] border-color border-opacity-10"
-                : ""
+              notification.read ? "border-l-[6px] border-l-orange-900/10" : ""
             }
           >
             <Notification.UserPic

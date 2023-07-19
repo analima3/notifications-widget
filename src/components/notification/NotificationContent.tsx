@@ -17,7 +17,6 @@ export function NotificationContent({
   notification,
 }: NotificationContentProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { comments } = useStore();
 
   const openTransition = isOpen
     ? "opacity-100 h-24 overflow-y-auto transition-all delay-200 ease"
@@ -88,46 +87,16 @@ export function NotificationContent({
       </div>
 
       {notification.action.type === "mentioned" && (
-        <>
-          <div
-            className={`dark:divide-zinc-800 text-color-primary flex flex-col ${openTransition}`}
-          >
-            {comments.map((comment) => {
-              return (
-                <div className="py-[2px] space-x-1 leading-none" key={comment}>
-                  <span className="text-xs lowercase">
-                    @{notification.user.name}
-                  </span>
-                  <span className="text-color-secondary text-xxs">
-                    {comment}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-          <button
-            onClick={handleOpen}
-            className="flex flex-row gap-2 items-center text-color-primary cursor-pointer"
-          >
-            {!!comments.length && (
-              <>
-                <ChevronDown
-                  size={18}
-                  className={`transition-all delay-200 ease ${
-                    isOpen ? "rotate-180" : "rotate-0"
-                  }`}
-                />
-                <span className="text-xs font-semibold">
-                  {isOpen
-                    ? "View less"
-                    : !comments.length
-                    ? ""
-                    : `View more ${comments.length}`}
-                </span>
-              </>
-            )}
-          </button>
-        </>
+        <button
+          onClick={handleOpen}
+          className="flex flex-row gap-2 items-center text-color-primary cursor-pointer"
+        >
+          <ChevronDown
+            size={18}
+            className="transition-all delay-200 ease-in-out"
+          />
+          <span className="text-xs font-semibold">View more 32</span>
+        </button>
       )}
     </div>
   );
