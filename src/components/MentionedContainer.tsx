@@ -4,15 +4,12 @@ import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import Picker from "@emoji-mart/react";
 import { Smile } from "lucide-react";
 import { Card } from "./ui/Card";
-import { useStore } from "@/context/store";
 
 export function MentionedContainer() {
   const [inputValue, setInputValue] = useState<string>("");
   const [openEmojiPicker, setOpenEmojiPicker] = useState<boolean>(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
-
-  const { setComments } = useStore();
 
   const handleEmojiClick = (emoji: any) => {
     if (inputRef.current) {
@@ -33,7 +30,6 @@ export function MentionedContainer() {
   const handleSubmit = (evt: FormEvent) => {
     evt.preventDefault();
 
-    setComments((prevState) => [...prevState, inputValue]);
     setInputValue("");
   };
 
