@@ -1,9 +1,9 @@
-import { ModalBody } from "./ModalBody";
-import { ModalHeader } from "./ModalHeader";
-import { ModalContainer } from "./ModalContainer";
+import { Body } from "./Body";
+import { Header } from "./Header";
+import { Root } from "./Root";
 
 export const Modal = {
-  Container: ModalContainer,
-  Header: ModalHeader,
-  Body: ModalBody,
+  Root,
+  Header,
+  Body,
 };

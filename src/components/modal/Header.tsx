@@ -2,12 +2,13 @@ import { TabType } from "@/@types/global";
 import { useStore } from "@/context/store";
 import { CheckCircle, Settings } from "lucide-react";
 
-interface ModalHeaderProps {
+interface HeaderProps {
   tabs: TabType[];
 }
 
-export function ModalHeader({ tabs }: ModalHeaderProps) {
+export function Header({ tabs }: HeaderProps) {
   const { currentTab, setCurrentTab, notifications } = useStore();
+
   return (
     <>
       <div className="w-full px-6 py-4 text-color border-b-[1px] border-color">

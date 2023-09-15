@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
-interface ModalBodyProps {
+interface BodyProps {
   children: ReactNode;
 }
-export function ModalBody({ children }: ModalBodyProps) {
+export function Body({ children }: BodyProps) {
   return (
     <div className="h-[calc(100%-105px)] overflow-y-auto overflow-x-hidden">
       {children}
