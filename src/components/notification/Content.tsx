@@ -7,15 +7,12 @@ import { MentionedContainer } from "../MentionedContainer";
 import { AskedContainer } from "../AskedContainer";
 import { UploadedContainer } from "../UploadedContainer";
 import { useState } from "react";
-import { useStore } from "@/context/store";
 
-interface NotificationContentProps {
+interface ContentProps {
   notification: NotificationType;
 }
 
-export function NotificationContent({
-  notification,
-}: NotificationContentProps) {
+export function Content({ notification }: ContentProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const openTransition = isOpen

@@ -1,9 +1,9 @@
-import { NotificationContent } from "./NotificationContent";
-import { NotificationContainer } from "./NotificationContainer";
-import { NotificationUserPic } from "./NotificationUserPic";
+import { Content } from "./Content";
+import { Root } from "./Root";
+import { Avatar } from "./Avatar";
 
 export const Notification = {
-  Container: NotificationContainer,
-  Content: NotificationContent,
-  UserPic: NotificationUserPic,
+  Root,
+  Content,
+  Avatar,
 };

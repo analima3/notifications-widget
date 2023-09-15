@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function NotificationUserPic({
+export function Avatar({
   urlPic,
   status,
 }: {

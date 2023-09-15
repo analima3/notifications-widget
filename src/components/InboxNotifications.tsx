@@ -6,18 +6,18 @@ export function InboxNotifications() {
     <div className="animate-slideLeft">
       {NOTIFICATIONS_MOCK.items.map((notification, index) => {
         return (
-          <Notification.Container
+          <Notification.Root
             key={index}
             className={
               notification.read ? "border-l-[6px] border-l-orange-900/10" : ""
             }
           >
-            <Notification.UserPic
+            <Notification.Avatar
               urlPic={notification.user.urlPic}
               status={notification.user.status}
             />
             <Notification.Content notification={notification} />
-          </Notification.Container>
+          </Notification.Root>
         );
       })}
     </div>
